@@ -1,0 +1,23 @@
+ATV-005-AVAL01
+GERENCIADOR DE ESTOQUE
+Modelar um sistema básico para gerenciar estoque de produtos em um empório. 
+O foco é será processar os dados e apresentar resultados solicitados.
+Requisitos e Funcionalidades
+O sistema deve ser capaz de:
+ 
+a) Armazenar dados de produtos e a quantidade em estoque em cada uma das filiais do empório em um Array. 
+(Ex.: 
+    Juca Cola 2L
+    Na filial 01 tem 100 unidades
+    Na filial 02 tem 40 unidades
+    Na filial 03 tem 21 unidades
+
+) Fazer isto para 5 produtos aleatórios contando com a Juca Cola 2L 😊
+O usuário deverá preencher os dados na página HTML.
+b) Calcular o estoque total de cada produto somando o de todas as filiais. A lista poderá ser exibida utilizando estruturas de repetição.
+c) Determinar a situação estoque baixo usando estruturas de decisão para todos os produtos 
+que tiverem menos de 30 unidades, informando o nome do produto, a situação "Estoque Baixo" e as filiais onde isto acontece. A lista poderá ser exibida utilizando estruturas de repetição.
+d) Exibir uma lista de todos os produtos, utilizando estrutura de repetição, mostrando o que há no estoque de cada filial.
+e) Criar uma function para validar as entradas, calcular o estoque total,  verificar estoque mínimo, e exibir todos os produtos.
+f) Realizar validação básica de dados, impedir vazio, tipo de dados incorreto ou números negativos para o estoque.
+ 
