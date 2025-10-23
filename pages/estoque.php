@@ -1,9 +1,18 @@
 <?php
 function validarEntradas($estoque){
     foreach($estoque as $valor){
-        if(!empty($valor)){
-            return true;
+        if(empty($valor)){
+            return false;
         }
+    }
+    return true;
+}
+function validarQuantidade($estoque,$quantidade){
+    if(!is_int($quantidade) && $quantidade<=0){
+        return false;
+    }
+    elseif(validarEntradas($estoque)){
+        return true; 
     }
 }
 
@@ -13,9 +22,12 @@ $estoque = [
     "quantidade" => [$_GET["quantidade"]],
 ];
 
-if(validarEntradas($estoque)== true){
+
+
+if(validarQuantidade($estoque,$estoque["quantidade"]) == true){
     echo "campos certos";
-}else{
+}
+else{
     header("Location:../index.html");
 }
 ?>
