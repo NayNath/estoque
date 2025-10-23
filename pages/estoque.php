@@ -7,25 +7,26 @@ function validarEntradas($estoque){
     }
     return true;
 }
-function validarQuantidade($estoque,$quantidade){
-    if(!is_int($quantidade) && $quantidade<=0){
-        return false;
+function validarQuantidade($quantidades){
+    foreach($quantidades as $quantidade){
+        if(!is_int($quantidade) && $quantidade<=0){
+            return false;
+        }
     }
-    elseif(validarEntradas($estoque)){
-        return true; 
-    }
+    return true; 
+
 }
-
 $estoque = [
-    "produto" => [$_GET["produto"]],
-    "filial"=> [$_GET["filial"]],
-    "quantidade" => [$_GET["quantidade"]],
+    'produto' => $_GET["produto"],
+    'filial' => $_GET["filial"],
+    'quantidade' => $_GET["quantidade"],
 ];
-
-
-
-if(validarQuantidade($estoque,$estoque["quantidade"]) == true){
-    echo "campos certos";
+if(validarEntradas($estoque)==true){
+    if(validarQuantidade($estoque['quantidade']) == true /*&& validarProduto($estoque,$produto)==true*/){
+        echo "campos certos";
+    }else{
+        header("Location:../index.html");
+    }
 }
 else{
     header("Location:../index.html");
